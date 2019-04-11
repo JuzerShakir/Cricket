@@ -69,7 +69,7 @@ if user_won_toss:
     # if user choose to bowls
     else:
         computer_bat = True
-        print('\n', user_name,'You have choosen to bowl first.')
+        print('\n', user_name,'You have choosen to bowl first.', end='\n\n')
         # pause
         time.sleep(2.5)
         print('Here you go!\nPress any number between 1 and 6.\nIf your number and computers number match, then I will be out!\n')
@@ -128,6 +128,7 @@ def game(chase, first_ing):
             print('Your batting at', total, '....')
             # if chasing, then matches the first inning score to second, if second inning is greater then break loop
             if chase and first_ing < total:
+                print('You have successfully chased my score!')
                 break
 
         # if computer bats first or second inning
@@ -135,6 +136,7 @@ def game(chase, first_ing):
             total = compt_num + total
             print('Computer batting at', total, '....')
             if chase and first_ing < total:
+                print('I have successfully chased your score!')
                 break
 
     return(total)
