@@ -8,7 +8,7 @@ print("\nHi", user_name, "! Let's play!", end="\n\n")
 # for pauses in between running the program
 import time
 # pause
-time.sleep(2.5)
+time.sleep(2)
 
 
 ####         TOSS           ####
@@ -38,9 +38,9 @@ user_won_toss = False
 # Who won the toss??
 if toss == user_toss:
     user_won_toss = True
-    print('\nCongratulations! You have won the toss!', end='\n\n')
+    print('\nCongratulations', user_name,'! You have won the toss!', end='\n\n')
 else:
-    print('\nSorry! You have lost the toss!', end='\n\n')
+    print('\nSorry', user_name,'! You have lost the toss!', end='\n\n')
 
 # pause
 time.sleep(2.5)
@@ -61,7 +61,7 @@ if user_won_toss:
     # if user chooses to bat
     if user_dec == 0:
         user_bat = True
-        print('\nYou have chosen to bat first.', end='\n\n')
+        print('\n', user_name,'You have chosen to bat first.', end='\n\n')
         # pause
         time.sleep(2.5)
         print("Here you go!\nPress any number between 1 and 6.\nIf your number and computer's number match, then you will be out!\n")
@@ -69,7 +69,7 @@ if user_won_toss:
     # if user choose to bowls
     else:
         computer_bat = True
-        print('\nYou have choosen to bowl first.')
+        print('\n', user_name,'You have choosen to bowl first.')
         # pause
         time.sleep(2.5)
         print('Here you go!\nPress any number between 1 and 6.\nIf your number and computers number match, then I will be out!\n')
@@ -80,7 +80,7 @@ else:
     # if odd then it will choose bowl, or bat first
     if rand_num % 2 == 0:
         computer_bat = True
-        print("I choose to bat first!")
+        print(user_name,'I choose to bat first!')
         # pause
         time.sleep(2.5)
         print('\nHere you go!\nPress any number between 1 and 6.\nIf your number and computers number match, then I will be out!\n')
@@ -88,7 +88,7 @@ else:
     # computer chooses to bowl
     else:
         user_bat = True
-        print("I choose to bowl first!")
+        print(user_name,'I choose to bowl first!')
         # pause
         time.sleep(2.5)
         print('\nHere you go!\nPress any number between 1 and 6.\nIf your number and computers number match, then you will be out!\n')
@@ -151,7 +151,7 @@ if user_bat:
     first_ing = game(chase, first_ing = 0)
 
     # outputs after first inning is over
-    print('You have scored', first_ing, '. Very good!\nNow its my turn to bat and beat your score.', end='\n\n')
+    print(user_name,'You have scored', first_ing, '. Very good!\nNow its my turn to bat and beat your score.', end='\n\n')
     # pause
     time.sleep(2.5)
     print('I need to score', first_ing + 1, 'to win.', end='\n\n')
@@ -165,7 +165,7 @@ if user_bat:
 else:
     first_ing = game(chase, first_ing = 0)
 
-    print('I have scored', first_ing, '. Very good!\nNow its your turn to bat and beat my score.', end='\n\n')
+    print(user_name,'I have scored', first_ing, '. Very good!\nNow its your turn to bat and beat my score.', end='\n\n')
     # pause
     time.sleep(2.5)
     print('You need to score', first_ing + 1, 'to win.', end='\n\n')
@@ -187,25 +187,25 @@ time.sleep(2.5)
 if computer_bat_sec_ing:
     # WIN
     if first_ing > second_ing:
-        print("\nCongratulations! You have beaten me! I loose! :)")
+        print("\nCongratulations", user_name,"! You have beaten me! I loose! :)")
     # TIE
     elif first_ing == second_ing:
-        print('\nOur scores are similar. Match is a TIE!  :(')
+        print('\n', user_name,',our scores are similar. Match is a TIE!  :(')
     # LOOSE
     else:
-        print("\nUnfortunately you lost the match! I win!  ;)")
+        print("\nUnfortunately", user_name,", you lost the match! I win!  ;)")
 
 # if user batted second innings
 elif user_bat_sec_ing:
     # LOOSE
     if first_ing > second_ing:
-        print("\nUnfortunately you lost the match! I win!  ;)")
+        print("\nUnfortunately", user_name,", you lost the match! I win!  ;)")
     # TIE
     elif first_ing == second_ing:
-        print('\nOur scores are similar. Match is a TIE!  :(')
+        print('\n', user_name,',our scores are similar. Match is a TIE!  :(')
     # WIN
     else:
-        print("\nCongratulations! You have beaten me! I loose! :)")
+        print("\nCongratulations", user_name,"! You have beaten me! I loose! :)")
 
 
 ### THE END ###
