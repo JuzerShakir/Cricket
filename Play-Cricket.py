@@ -139,13 +139,20 @@ def game(chase, first_ing):
 
     # continue to bat until the player is not out
     while not_out:
-        # asks user for score
-        user_num = int(input(''))
 
+        # avoid traceback for string and float inputs
+        try:
+            # asks user for score
+            user_num = int(input(''))
+        except:
+            print('Invalid Input!')
+            continue
+
+        # checks whether the input is in valid range
         if user_num <= 0 or user_num >= 7:
             print('Invalid Input!')
             continue
-            
+
         # generates random number
         compt_num = random.randint(1, 6)
 
